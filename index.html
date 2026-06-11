@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LDH Student Council 2026–27</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --purple-deep:   #2a0a4a;
+      --purple-mid:    #4b1d8a;
+      --purple-bright: #7c3aed;
+      --purple-light:  #a855f7;
+      --purple-pale:   #f3e8ff;
+      --black:         #0d0d14;
+      --card-bg:       #ffffff;
+      --text-dark:     #1a1a2e;
+      --text-mid:      #4a4a6a;
+      --text-light:    #8888aa;
+      --border:        #e8e0f5;
+      --gradient-hero: linear-gradient(135deg, #1a003a 0%, #2d0060 40%, #4b1d8a 70%, #7c3aed 100%);
+      --shadow-card:   0 4px 24px rgba(75, 29, 138, 0.10);
+      --shadow-hover:  0 12px 40px rgba(75, 29, 138, 0.22);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: #faf8ff;
+      color: var(--text-dark);
+      min-height: 100vh;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: var(--gradient-hero);
+      position: relative;
+      overflow: hidden;
+      padding: 4rem 2rem 5rem;
+      text-align: center;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 100%, rgba(124,58,237,0.35) 0%, transparent 70%),
+        url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23a855f7' fill-opacity='0.06'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+
+    .header-inner { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
+
+    .raven-icon {
+      display: inline-block;
+      margin-bottom: 1.25rem;
+    }
+    .raven-icon svg { width: 72px; height: 72px; filter: drop-shadow(0 0 20px rgba(168,85,247,0.6)); }
+
+    .school-label {
+      display: inline-block;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: rgba(255,255,255,0.85);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.9rem;
+      border-radius: 999px;
+      margin-bottom: 1.1rem;
+    }
+
+    header h1 {
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.6rem;
+    }
+
+    header h1 span { color: var(--purple-light); }
+
+    header p {
+      color: rgba(255,255,255,0.65);
+      font-size: 1.05rem;
+      font-weight: 400;
+      margin-top: 0.75rem;
+    }
+
+    .header-wave {
+      position: absolute;
+      bottom: -1px; left: 0; right: 0;
+      height: 60px;
+      overflow: hidden;
+    }
+    .header-wave svg { width: 100%; height: 100%; display: block; }
+
+    /* ── NAV PILLS ── */
+    .nav-pills {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding: 2rem 1.5rem 1rem;
+    }
+    .nav-pills a {
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      color: var(--purple-mid);
+      background: #fff;
+      border: 1.5px solid var(--border);
+      padding: 0.4rem 1.1rem;
+      border-radius: 999px;
+      transition: all 0.18s ease;
+    }
+    .nav-pills a:hover {
+      background: var(--purple-bright);
+      color: #fff;
+      border-color: var(--purple-bright);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(124,58,237,0.3);
+    }
+
+    /* ── MAIN CONTENT ── */
+    main { max-width: 1100px; margin: 0 auto; padding: 1rem 1.5rem 5rem; }
+
+    /* ── SECTION HEADING ── */
+    .section-heading {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin: 3rem 0 1.25rem;
+    }
+    .section-heading h2 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--purple-mid);
+    }
+    .section-heading::after {
+      content: '';
+      flex: 1;
+      height: 1.5px;
+      background: var(--border);
+      border-radius: 1px;
+    }
+    .section-icon {
+      width: 32px; height: 32px;
+      background: var(--purple-pale);
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      font-size: 0.95rem;
+    }
+
+    /* ── GRID ── */
+    .grid {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    }
+    .grid-wide { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+
+    /* ── MEMBER CARD ── */
+    .card {
+      background: var(--card-bg);
+      border: 1.5px solid var(--border);
+      border-radius: 16px;
+      padding: 1.4rem 1.25rem 1.25rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      cursor: default;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+      border-color: rgba(124,58,237,0.35);
+    }
+
+    .avatar {
+      width: 64px; height: 64px;
+      border-radius: 50%;
+      background: var(--gradient-hero);
+      display: grid;
+      place-items: center;
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 0.85rem;
+      flex-shrink: 0;
+      letter-spacing: -0.02em;
+      box-shadow: 0 4px 16px rgba(75,29,138,0.28);
+    }
+
+    .card-name {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 0.35rem;
+    }
+
+    .role-badge {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      background: var(--purple-pale);
+      color: var(--purple-mid);
+    }
+
+    /* Role colour variants */
+    .badge-exec    { background: #ede9fe; color: #5b21b6; }
+    .badge-spirit  { background: #fdf4ff; color: #86198f; }
+    .badge-comms   { background: #f0fdf4; color: #166534; }
+    .badge-rep     { background: #fff7ed; color: #9a3412; }
+    .badge-health  { background: #fdf2f8; color: #9d174d; }
+    .badge-tbd     { background: #f1f5f9; color: #475569; }
+
+    /* ── TBD CARD ── */
+    .card-tbd {
+      border-style: dashed;
+      border-color: #d1c4f0;
+      background: #faf8ff;
+    }
+    .card-tbd .avatar {
+      background: linear-gradient(135deg, #c4b5fd, #a78bfa);
+      box-shadow: none;
+    }
+    .card-tbd .card-name { color: var(--text-light); font-style: italic; }
+    .card-tbd .tbd-note {
+      font-size: 0.68rem;
+      color: var(--text-light);
+      margin-top: 0.4rem;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: var(--purple-deep);
+      color: rgba(255,255,255,0.45);
+      font-size: 0.78rem;
+      letter-spacing: 0.04em;
+    }
+    footer strong { color: rgba(255,255,255,0.7); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 480px) {
+      header { padding: 3rem 1.5rem 4rem; }
+      .grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+      .card { padding: 1.1rem 0.9rem 1rem; }
+      .avatar { width: 52px; height: 52px; font-size: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── HEADER ── -->
+<header>
+  <div class="header-inner">
+    <div class="raven-icon">
+      <!-- Raven SVG silhouette -->
+      <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="50" cy="80" rx="28" ry="6" fill="rgba(255,255,255,0.1)"/>
+        <!-- Body -->
+        <path d="M50 20 C38 20 26 32 26 50 C26 62 30 72 38 76 L38 82 L44 80 L44 76 C46 77 48 77.5 50 77.5 C52 77.5 54 77 56 76 L56 80 L62 82 L62 76 C70 72 74 62 74 50 C74 32 62 20 50 20Z" fill="white"/>
+        <!-- Wing left -->
+        <path d="M38 48 C30 42 20 38 14 42 C20 50 28 56 38 56Z" fill="white"/>
+        <!-- Wing right -->
+        <path d="M62 48 C70 42 80 38 86 42 C80 50 72 56 62 56Z" fill="white"/>
+        <!-- Head -->
+        <circle cx="50" cy="26" r="12" fill="white"/>
+        <!-- Beak -->
+        <path d="M44 26 L36 24 L38 28Z" fill="rgba(255,255,255,0.7)"/>
+        <!-- Eye -->
+        <circle cx="46" cy="24" r="2.5" fill="#4b1d8a"/>
+        <circle cx="46" cy="24" r="1" fill="white"/>
+        <!-- Tail -->
+        <path d="M44 76 C42 84 36 90 30 88 C36 82 40 78 44 76Z" fill="white"/>
+        <path d="M56 76 C58 84 64 90 70 88 C64 82 60 78 56 76Z" fill="white"/>
+        <path d="M50 77.5 L48 88 L50 86 L52 88Z" fill="white"/>
+      </svg>
+    </div>
+    <div class="school-label">Longfields-Davidson Heights SS · Barrhaven, Ottawa</div>
+    <h1>Student Council<br/><span>2026–27</span></h1>
+    <p>Your elected Ravens — serving the LDHSS community</p>
+  </div>
+  <div class="header-wave">
+    <svg viewBox="0 0 1200 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,40 C300,70 900,10 1200,40 L1200,60 L0,60 Z" fill="#faf8ff"/>
+    </svg>
+  </div>
+</header>
+
+<!-- ── JUMP LINKS ── -->
+<nav class="nav-pills" aria-label="Jump to section">
+  <a href="#executive">Executive</a>
+  <a href="#spirit">Spirit</a>
+  <a href="#communications">Communications</a>
+  <a href="#senators">Senators</a>
+  <a href="#grade-reps">Grade Reps</a>
+  <a href="#wellness">Mental Health</a>
+</nav>
+
+<main>
+
+  <!-- ── EXECUTIVE ── -->
+  <div class="section-heading" id="executive">
+    <div class="section-icon">👑</div>
+    <h2>Executive</h2>
+  </div>
+  <div class="grid grid-wide">
+
+    <div class="card">
+      <div class="avatar">HS</div>
+      <div class="card-name">Hannah Snelson</div>
+      <div class="role-badge badge-exec">Co-President</div>
+    </div>
+
+    <div class="card">
+      <div class="avatar">JL</div>
+      <div class="card-name">Jeffrey Lau</div>
+      <div class="role-badge badge-exec">Co-President</div>
+    </div>
+
+    <div class="card">
+      <div class="avatar">PZ</div>
+      <div class="card-name">Paulina Zhang</div>
+      <div class="role-badge badge-exec">Secretary</div>
+    </div>
+
+    <div class="card">
+      <div class="avatar">SL</div>
+      <div class="card-name">Samantha Liu</div>
+      <div class="role-badge badge-exec">Treasurer</div>
+    </div>
+
+  </div>
+
+  <!-- ── SPIRIT ── -->
+  <div class="section-heading" id="spirit">
+    <div class="section-icon">🎉</div>
+    <h2>Spirit</h2>
+  </div>
+  <div class="grid">
+
+    <div class="card">
+      <div class="avatar">LW</div>
+      <div class="card-name">Logan Wu</div>
+      <div class="role-badge badge-spirit">Co-Head Spirit</div>
+    </div>
+
+    <div class="card">
+      <div class="avatar">EM</div>
+      <div class="card-name">Emily Mackereth</div>
+      <div class="role-badge badge-spirit">Co-Head Spirit</div>
+    </div>
+
+  </div>
+
+  <!-- ── COMMUNICATIONS ── -->
+  <div class="section-heading" id="communications">
+    <div class="section-icon">📣</div>
+    <h2>Communications</h2>
+  </div>
+  <div class="grid">
+
+    <div class="card">
+      <div class="avatar">ME</div>
+      <div class="card-name">Malak Elasfar</div>
+      <div class="role-badge badge-comms">Publication</div>
+    </div>
+
+    <div class="card">
+      <div class="avatar">BK</div>
+      <div class="card-name">Belsam Kaouache</div>
+      <div class="role-badge badge-comms">Videographer</div>
+    </div>
+
+  </div>
+
+  <!-- ── SENATORS ── -->
+  <div class="section-heading" id="senators">
+    <div class="section-icon">🏛️</div>
+    <h2>Senators</h2>
+  </div>
+  <div class="grid">
+
+    <div class="card">
+      <div class="avatar">AL</div>
+      <div class="card-name">Alice Li</div>
+      <div class="role-badge badge-rep">Senator (Senior)</div>
+    </div>
+
+    <div class="card card-tbd">
+      <div class="avatar">?</div>
+      <div class="card-name">Coming Soon</div>
+      <div class="role-badge badge-tbd">Senator (Junior)</div>
+      <div class="tbd-note">Election in September</div>
+    </div>
+
+  </div>
+
+  <!-- ── GRADE REPS ── -->
+  <div class="section-heading" id="grade-reps">
+    <div class="section-icon">🎓</div>
+    <h2>Grade Representatives</h2>
+  </div>
+  <div class="grid">
+
+    <div class="card card-tbd">
+      <div class="avatar">?</div>
+      <div class="card-name">Coming Soon</div>
+      <div class="role-badge badge-tbd">Grade 9 Rep</div>
+      <div class="tbd-note">Election in September</div>
+    </div>
+
+    <div class="card card-tbd">
+      <div class="avatar">?</div>
+      <div class="card-name">Coming Soon</div>
+      <div class="role-badge badge-tbd">Grade 9 Rep</div>
+      <div class="tbd-note">Election in September</div>
+    </div>
+
+    <div class="card">
+      <div class="avatar">HH</div>
+      <div class="card-name">Hana Haggui</div>
+      <div class="role-badge badge-rep">Grade 10 Rep</div>
+    </div>
+
+    <div class="card">
+      <div class="avatar">YM</div>
+      <div class="card-name">Youmna Mostafa</div>
+      <div class="role-badge badge-rep">Grade 10 Rep</div>
+    </div>
+
+    <div class="card">
+      <div class="avatar">BA</div>
+      <div class="card-name">Belal Aly</div>
+      <div class="role-badge badge-rep">Grade 11 Rep</div>
+    </div>
+
+    <div class="card">
+      <div class="avatar">JC</div>
+      <div class="card-name">Junia Chapman</div>
+      <div class="role-badge badge-rep">Grade 11 Rep</div>
+    </div>
+
+    <div class="card">
+      <div class="avatar">DS</div>
+      <div class="card-name">Danna Sunallah</div>
+      <div class="role-badge badge-rep">Grade 12 Rep</div>
+    </div>
+
+    <div class="card">
+      <div class="avatar">JB</div>
+      <div class="card-name">Joyjyot Brar</div>
+      <div class="role-badge badge-rep">Grade 12 Rep</div>
+    </div>
+
+  </div>
+
+  <!-- ── MENTAL HEALTH ── -->
+  <div class="section-heading" id="wellness">
+    <div class="section-icon">💜</div>
+    <h2>Mental Health &amp; Wellness</h2>
+  </div>
+  <div class="grid">
+
+    <div class="card">
+      <div class="avatar">MM</div>
+      <div class="card-name">Madison Moran</div>
+      <div class="role-badge badge-health">Mental Health Rep</div>
+    </div>
+
+    <div class="card">
+      <div class="avatar">MA</div>
+      <div class="card-name">Mobina Amin</div>
+      <div class="role-badge badge-health">Mental Health Rep</div>
+    </div>
+
+  </div>
+
+</main>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <p><strong>LDH Student Council 2026–27</strong> &nbsp;·&nbsp; Longfields-Davidson Heights Secondary School &nbsp;·&nbsp; Barrhaven, Ottawa</p>
+  <p style="margin-top:0.4rem">Go Ravens 🖤💜</p>
+</footer>
+
+</body>
+</html>
